@@ -15,5 +15,5 @@ script:
   - docker-compose up -d
   - docker-compose exec jumpServer apk update
   - docker-compose exec jumpServer apk add curl
-  - docker-compose exec jumpServer curl
+  - docker-compose exec jumpServer curl whoami
                 
