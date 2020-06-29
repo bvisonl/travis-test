@@ -6,14 +6,14 @@ services:
 env:
   COMPOSE_VERSION: "1.4.1"
   
-  before_install:
-    - curl -L https://github.com/docker/compose/releases/download/${COMPOSE_VERSION}/docker-compose-`uname -s`-`uname -m` > docker-compose
-    - chmod +x docker-compose
-    - sudo mv docker-compose /usr/local/bin
+before_install:
+  - curl -L https://github.com/docker/compose/releases/download/${COMPOSE_VERSION}/docker-compose-`uname -s`-`uname -m` > docker-compose
+  - chmod +x docker-compose
+  - sudo mv docker-compose /usr/local/bin
         
-  script:
-    - docker-compose up -d
-    - docker-compose exec jumpServer apk update
-    - docker-compose exec jumpServer apk add curl
-    - docker-compose exec jumpServer curl
+script:
+  - docker-compose up -d
+  - docker-compose exec jumpServer apk update
+  - docker-compose exec jumpServer apk add curl
+  - docker-compose exec jumpServer curl
                 
